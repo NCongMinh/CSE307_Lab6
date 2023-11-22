@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Problem 2</title>
+    <script>
+      function calc() {
+        let string;
+        for (let i = 1, j = 1; i < 31 && j < 7; i += 5, j++) {
+          string = document.getElementById("n" + j).outerText;
+          document.getElementById("a" + i).innerHTML = parseInt(string);
+          document.getElementById("a" + (i + 1)).innerHTML = parseFloat(string);
+          document.getElementById("a" + (i + 2)).innerHTML = Number(string);
+          document.getElementById("a" + (i + 3)).innerHTML = string + string;
+          document.getElementById("a" + (i + 4)).innerHTML = string ^ 0;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <td>string</td>
+        <td>parseInt(string)</td>
+        <td>parseFloat(string)</td>
+        <td>Number(string)</td>
+        <td>string + string</td>
+        <td>string | 0</td>
+      </tr>
+      <tr>
+        <td id="n1">1234</td>
+        <td id="a1">?</td>
+        <td id="a2">?</td>
+        <td id="a3">?</td>
+        <td id="a4">?</td>
+        <td id="a5">?</td>
+      </tr>
+      <tr>
+        <td id="n2">1234abc</td>
+        <td id="a6">?</td>
+        <td id="a7">?</td>
+        <td id="a8">?</td>
+        <td id="a9">?</td>
+        <td id="a10">?</td>
+      </tr>
+      <tr>
+        <td id="n3">0.15</td>
+        <td id="a11">?</td>
+        <td id="a12">?</td>
+        <td id="a13">?</td>
+        <td id="a14">?</td>
+        <td id="a15">?</td>
+      </tr>
+      <tr>
+        <td id="n4">3.14ivan</td>
+        <td id="a16">?</td>
+        <td id="a17">?</td>
+        <td id="a18">?</td>
+        <td id="a19">?</td>
+        <td id="a20">?</td>
+      </tr>
+      <tr>
+        <td id="n5">Infinity</td>
+        <td id="a21">?</td>
+        <td id="a22">?</td>
+        <td id="a23">?</td>
+        <td id="a24">?</td>
+        <td id="a25">?</td>
+      </tr>
+      <tr>
+        <td id="n6">99999999999999999999</td>
+        <td id="a26">?</td>
+        <td id="a27">?</td>
+        <td id="a28">?</td>
+        <td id="a29">?</td>
+        <td id="a30">?</td>
+      </tr>
+    </table>
+
+    <input type="button" onclick="calc()" value="Calculate" />
+  </body>
+</html>

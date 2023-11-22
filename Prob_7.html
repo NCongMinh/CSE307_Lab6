@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Problem 7</title>
+    <script>
+      function print() {
+        let number = document.getElementById("numbers").value;
+        if (!number || number < 0) {
+          document.getElementById("result").innerText =
+            "Please enter a valid positive number";
+        } else {
+          let arr = number.split(",");
+          arr = numericValue(arr);
+          let sorted = arr.sort(function (a, b) {
+            return a - b;
+          });
+          document.getElementById("result").innerText =
+            "Min: " +
+            sorted[0] +
+            "\nMax: " +
+            sorted[sorted.length - 1] +
+            "\nSum: " +
+            sum(sorted) +
+            "\nAvg: " +
+            (sum(sorted) / sorted.length).toFixed(2);
+        }
+      }
+      function sum(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        return sum;
+      }
+      function numericValue(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          arr[i] = parseInt(arr[i]);
+        }
+        return arr;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>MMSA of N Numbers</h1>
+    <p>Enter numbers separated by commas</p>
+    <input type="text" id="numbers" />
+    <input
+      type="button"
+      id="printNumber"
+      value="Print Number"
+      onclick="print()"
+    />
+    <p id="result"></p>
+  </body>
+</html>

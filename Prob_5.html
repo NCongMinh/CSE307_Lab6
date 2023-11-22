@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Problem 5</title>
+    <script>
+      function print() {
+        let number = document.getElementById("numbers").value;
+        if (!number || number < 0) {
+          document.getElementById("result").innerText =
+            "Please enter a valid positive number";
+        }
+        for (let n = 1; n <= number; n++) {
+          document.getElementById("result").innerHTML += n + " ";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Numbers from 1 to N</h1>
+    <p>Enter a positive integer N:</p>
+    <input type="text" id="numbers" />
+    <input
+      type="button"
+      id="printNumber"
+      value="Print Number"
+      onclick="print()"
+    />
+    <p id="result"></p>
+  </body>
+</html>
