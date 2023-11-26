@@ -27,21 +27,13 @@
           },
         ];
 
-        // for (let i = 1; i < books.length; i++) {
-        //   if (books[i].price > maxPrice) {
-        //     temp = books[i];
-        //     maxPrice = books[i].price;
-        //     books[i];
-        //   }
-        // }
         let sortedPrice = books.sort((a, b) => a.price - b.price);
         for (i = 0; i < sortedPrice.length; i++) {
           document.getElementById(
             "result"
           ).innerHTML += ` <div style='flex:30%'>
                         <p id='title'>${sortedPrice[i].title}</p>
-                        <img id='img' width=150 height=180
-                            src='${sortedPrice[i].image}' />
+                        <img id='img' width=150 height=180 src='${sortedPrice[i].image}' />
                         <p id='price'>
                             ${sortedPrice[i].price} VND
                         </p>

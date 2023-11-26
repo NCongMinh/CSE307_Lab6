@@ -4,32 +4,92 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Problem 4</title>
+    <link rel="stylesheet" href="Prob4.css" />
   </head>
-  <body>
-    <script>
-      function sort() {
-        let books = [
-          {
-            title: "The Alchemist",
-            image:
-              "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654371463i/18144590.jpg",
-            price: "182700",
-            
-          },
-          {
-            title: "Thinking, fast and slow",
-            image:
-              "https://img.ws.mms.shopee.vn/sg-11134201-22100-tyb5w27sc1iv35",
-            price: "299700",
-          },
-          {
-            title: "Learning How to learn",
-            image:
-              "https://cdn0.fahasa.com/media/catalog/product/9/7/9780143132547.jpg",
-            price: "251100",
-          },
-        ];
-      }
-    </script>
+  <body onload="print(device)">
+    <!-- WARNING -->
+    <div id="warning"></div>
+
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td>
+          <input id="nameInput" type="text" placeholder="Input name here" />
+        </td>
+
+        <td>Quantity:</td>
+        <td>
+          <input
+            id="quantityInput"
+            type="text"
+            placeholder="Input quantity here"
+          />
+        </td>
+
+        <td>Img Link:</td>
+        <td>
+          <input id="imgInput" type="text" placeholder="Input image here" />
+        </td>
+
+        <td>Price:</td>
+        <td>
+          <input id="priceInput" type="text" placeholder="Input price here" />
+        </td>
+      </tr>
+    </table>
+    <br />
+
+    <input
+      type="button"
+      onclick="addBottom()"
+      value="Add product to the bottom"
+    />
+    <input type="button" onclick="addTop()" value="Add product to the top" />
+    <input type="button" onclick="sort()" value="Sort product" />
+    <br />
+    <br />
+    <input id="search" type="text" placeholder="Search by name" />
+    <input type="button" onclick="searchByName()" value="Search" />
+    <input id="remove" type="text" placeholder="Remove" />
+    <input type="button" onclick="removeByID()" value="Remove" />
+    <input id="reset" type="button" onclick="print(device)" value="Reset" />
+    <br /><br /><br />
+    Edit ID:
+    <input id="edit" type="text" placeholder="Remove" />
+    by these:
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td>
+          <input id="nameInput2" type="text" placeholder="Input name here" />
+        </td>
+
+        <td>Quantity:</td>
+        <td>
+          <input
+            id="quantityInput2"
+            type="text"
+            placeholder="Input quantity here"
+          />
+        </td>
+
+        <td>Img Link:</td>
+        <td>
+          <input id="imgInput2" type="text" placeholder="Input image here" />
+        </td>
+
+        <td>Price:</td>
+        <td>
+          <input id="priceInput2" type="text" placeholder="Input price here" />
+        </td>
+        <td>
+          <input type="button" onclick="edit()" value="Edit" />
+        </td>
+      </tr>
+    </table>
+    <!-- RESULT -->
+    <div id="result" style="display: flex"></div>
+
+    <script src="Prob4.js"></script>
   </body>
 </html>
